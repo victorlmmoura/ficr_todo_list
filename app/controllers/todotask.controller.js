@@ -1,5 +1,5 @@
 const db = require("../models");
-const TodoTask = db.tasks;
+const TodoTask = db.TodoTask;
 const Op = db.Sequelize.Op;
 
 
@@ -7,7 +7,7 @@ exports.create = (req, res) => {
   
   if (!req.body.nome_tarefa) {
     res.status(400).send({
-      message: "Não pode ser vazio!"
+      message: "Nao pode ser vazio!"
     });
     return;
   }
@@ -79,7 +79,7 @@ exports.update = (req, res) => {
         });
       } else {
         res.send({
-          message: `Não foi possível editar a tarefa id=${id}.`
+          message: `Nao foi possível editar a tarefa id=${id}.`
         });
       }
     })
